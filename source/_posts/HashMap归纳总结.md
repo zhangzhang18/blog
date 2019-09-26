@@ -90,7 +90,7 @@ HashTable是使用synchronized来锁住整张Hash表来实现线程安全。
 
 一个 ConcurrentHashMap 由一个个 Segment 组成，Segment代表”部分“或”一段“的意思，所以很多地方都会将其描述为分段锁。
 Segment 内部是由 数组+链表 组成的。
-
+(读操作不加锁，由于HashEntry的value变量是 volatile的，也能保证读取到最新的值。)
 ![ConcurrentHashMap](ConcurrentHashMap.jpg)
 
 

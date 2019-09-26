@@ -68,6 +68,12 @@ Java中允许编译器和处理器对指令进行重排序，volatile、synchron
 ---
 volatile实现原理
 
+happen-before ：操作之间的内存可见性
+-- 如果一个操作的执行结果对另一个操作可见，那么这两个操作之间必须要存在
+内存屏障
+写之前StoreStore 
+写之后StoreLoad
+
 
 
 
