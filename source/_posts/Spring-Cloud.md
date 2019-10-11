@@ -2,21 +2,27 @@
 title: Spring-Cloud
 copyright: true
 abbrlink: 97375e6f
-date: 2018-01-20 17:27:23
+date: 2019-01-24 16:21:58
 categories:
   - NoteBook
 tags: 
  - Spring
 top:
 ---
-Spring Cloud简介
+# Spring Cloud简介
 > Spring Cloud是一个基于Spring Boot实现的云应用开发工具，它为基于JVM的云应用开发中涉及的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。
 
-微服务
-
+## 微服务
 > 简单的说，微服务架构就是将一个完整的应用从数据存储开始垂直拆分成多个不同的服务，每个服务都能独立部署、独立维护、独立扩展，服务与服务间通过诸如RESTful API的方式互相调用。
 
-服务治理
+## 优势
+1. 
+## 问题
+1. 冗余-分布式系统的冗余问题
+2. 性能问题
+3. 部署的复杂度
+
+#服务治理
 
 - Spring Cloud应用中可以支持多种不同的服务治理框架，比如：Netflix Eureka、Consul、Zookeeper
 - Spring Cloud Eureka是Spring Cloud Netflix项目下的服务治理模块。

@@ -11,7 +11,7 @@ top:
 ---
 
 ## 常用指令
-
+<!-- more -->
 ls　&ensp;&ensp;&ensp;&ensp;　        显示文件或目录
 
      -l           列出文件详细信息l(list)
@@ -55,7 +55,7 @@ more、less &ensp;&ensp;&ensp;&ensp;　 分页显示文本文件内容
 head、tail   &ensp;&ensp;&ensp;&ensp;　 显示文件头、尾内容
 
 ctrl+alt+F1 &ensp;&ensp;&ensp;&ensp;　 命令行全屏模式
-<!-- more -->
+
 ##　打包压缩相关命令
 
 gzip：

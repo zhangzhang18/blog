@@ -2,7 +2,7 @@
 title: Redis归纳
 copyright: true
 abbrlink: b46adbe6
-date: 2018-08-18 16:31:47
+date: 2019-08-18 16:31:47
 categories:
   - NoteBook
 tags: 
@@ -14,6 +14,9 @@ top:
 一个基于内存的高性能的key-value数据库。
 
 > 数据结构：String字符串，Hash字典，List列表，Set集合，SortedSet有序集合。
+
+![Redis](Redis.png)
+
 <!-- more -->
 1. **使用Redis有哪些好处？**
 
