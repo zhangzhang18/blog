@@ -22,7 +22,7 @@ top:
 2. 性能问题
 3. 部署的复杂度
 
-#服务治理
+# 服务治理
 
 - Spring Cloud应用中可以支持多种不同的服务治理框架，比如：Netflix Eureka、Consul、Zookeeper
 - Spring Cloud Eureka是Spring Cloud Netflix项目下的服务治理模块。

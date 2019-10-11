@@ -9,9 +9,9 @@ tags:
   - Linux
 top:
 ---
-
-## 常用指令
 <!-- more -->
+## 常用指令
+
 ls　&ensp;&ensp;&ensp;&ensp;　        显示文件或目录
 
      -l           列出文件详细信息l(list)

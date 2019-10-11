@@ -112,5 +112,5 @@ tag_cloud:
     outlineColour: \#E2E1D1
 deploy:
   type: git
-  repository: git@git.dev.tencent.com:dtid_3e5656369755f064/myblog.git
+  repository: git@github.com:zhangzhang18/myBlog.git
   branch: master
