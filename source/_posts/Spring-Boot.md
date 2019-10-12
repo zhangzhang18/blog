@@ -12,7 +12,7 @@ top:
 Spring Boot解决得问题
 > 配置、部署、监控变得简单。
 
-# Boot只需要很少得配置（@Configuration），项目快速搭建，主流框架无配置集成。
+> Boot只需要很少得配置（@Configuration），项目快速搭建，主流框架无配置集成。
 
 ## 核心功能
 1. 独立运行Spring项目

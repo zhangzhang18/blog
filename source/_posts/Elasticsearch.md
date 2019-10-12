@@ -13,14 +13,14 @@ top:
 
 **面向文档**
 在应用程序中对象很少只是一个简单的键和值的列表。通常，它们拥有更复杂的数据结构，可能包括日期、地理信息、其他对象或者数组等。
-
+<!-- more -->
 Elasticsearch是面向文档(document oriented)的，这意味着它可以存储整个对象或文档(document)。然而它不仅仅是存储，还会索引(index)每个文档的内容使之可以被搜索。在Elasticsearch中，你可以对文档（而非成行成列的数据）进行索引、搜索、排序、过滤。这种理解数据的方式与以往完全不同，这也是Elasticsearch能够执行复杂的全文搜索的原因之一。
 
 **JSON**
 Elasticsearch 使用 JavaScript Object Notation 或者 JSON 作为文档的序列化格式。
 
 Elasticsearch集群可以包含多个索引(indices)（数据库），每一个索引可以包含多个类型(types)（表），每一个类型包含多个文档(documents)（行），然后每个文档包含多个字段(Fields)（列）。
-<!-- more -->
+
 
 所以为了创建员工目录，我们将进行如下操作：
 
