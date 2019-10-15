@@ -11,8 +11,6 @@ tags:
  - 集合
 top:
 ---
-## 总结ArrayList和LinkedList
-HashMap
 ![hashMap](hashMap.jpg)
 
 <!-- more -->

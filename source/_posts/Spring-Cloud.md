@@ -35,9 +35,5 @@ top:
 2. Spring Cloud Ribbon是基于Netflix Ribbon实现的一套客户端负载均衡的工具。它是一个基于HTTP和TCP的客户端负载均衡器。它可以通过在客户端中配置ribbonServerList来设置服务端列表去轮询访问以达到均衡负载的作用。
 
 3. Spring Cloud Feign是一套基于Netflix Feign实现的声明式服务调用客户端。它使得编写Web服务客户端变得更加简单。我们只需要通过创建接口并用注解来配置它既可完成对Web服务接口的绑定。它具备可插拔的注解支持，包括Feign注解、JAX-RS注解。它也支持可插拔的编码器和解码器。Spring Cloud Feign还扩展了对Spring MVC注解的支持，同时还整合了Ribbon和Eureka来提供均衡负载的HTTP客户端实现。
-##　CAP理论
-> CAP理论是分布式架构中重要理论
-1. 一致性(Consistency) (所有节点在同一时间具有相同的数据)
-2. 可用性(Availability) (保证每个请求不管成功或者失败都有响应)
-3. 分区容错(Partition tolerance) (系统中任意信息的丢失或失败不会影响系统的继续运作)
+
 

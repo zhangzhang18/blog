@@ -28,9 +28,13 @@ Zookeeper一致性
 - Zookeeper Service集群是一主多从结构，更新数据时，首先跟新到主节点，在同步从节点。读取数据的时候可以读取任意节点
 
 Zookeeper应用场景：
--分布式协调服务
+
+- 分布式协调服务
 - 分布式锁
 - 服务注册与发现
 - 共享配置和状态信息
+
+
+ 
 [Zookeeper IBM](https://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/index.html)
 [小灰 什么是ZooKeeper？](https://juejin.im/post/5b037d5c518825426e024473)
