@@ -11,7 +11,7 @@ tags:
 top: 
 ---
 
-![load](load.jpg)
+![类加载](load.jpg)
 
 Java虚拟机加载类的全过程包括，加载，验证，准备，解析和初始化。
 <!-- more -->
