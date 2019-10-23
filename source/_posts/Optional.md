@@ -70,6 +70,7 @@ Optional是Java8提供的为了解决null安全问题的一个API。
   https://docs.oracle.com/javase/8/docs/api/java/lang/doc-files/ValueBased.html
 
   这里说的是基于值的类需要满足以下几点：
+  
   1、 final类型和不可变的（可能会包含可变对象的引用）  
   2、 有equals、hashCode、toString方法的实现，它是通过实例的状态计算出来的，而并不会通过其它的对象或变量去计算。   
   3、 不会使用身份敏感的操作，比如在二个实例之间引用相等性、hashCode或者内在的锁。  
@@ -100,4 +101,5 @@ Optional是Java8提供的为了解决null安全问题的一个API。
 - orElseThrow()：如果值存在，返回该值；否则抛出NoSuchElementException。注意：与 Java 8 不同，不接受任何参数。
 - **Java 11**
 - isEmpty()：如果值不存在，返回 true；否则返回 false。
-- 
+
+  

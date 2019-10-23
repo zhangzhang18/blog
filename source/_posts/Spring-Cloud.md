@@ -27,6 +27,8 @@ top:
 4. 分布式系统的冗余问题
 5. 分布式系统的复杂性
 
+<!-- more -->
+
 # 服务治理
 ![服务注册中心对比](register.png)
 - Spring Cloud应用中可以支持多种不同的服务治理框架，比如：Netflix Eureka、Consul、Zookeeper

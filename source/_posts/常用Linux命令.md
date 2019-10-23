@@ -9,13 +9,15 @@ tags:
   - Linux
 top:
 ---
-<!-- more -->
+
 ## 常用指令
 
 ls　&ensp;&ensp;&ensp;&ensp;　        显示文件或目录
 
      -l           列出文件详细信息l(list)
      -a          列出当前目录下所有文件及目录，包括隐藏的a(all)
+<!-- more -->
+
 mkdir  &ensp;&ensp;&ensp;&ensp;　       创建目录
 
      -p           创建目录，若无父目录，则创建p(parent)
@@ -35,7 +37,7 @@ rm     &ensp;&ensp;&ensp;&ensp;　          删除文件
 
      -r            递归删除，可删除子目录及文件
      -f            强制删除
-     
+
 find    &ensp;&ensp;&ensp;&ensp;　          在文件系统中搜索某文件
 
 wc      &ensp;&ensp;&ensp;&ensp;　          统计文本中行数、字数、字符数

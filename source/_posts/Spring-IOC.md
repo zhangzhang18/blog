@@ -30,7 +30,7 @@ Spring可以使用POJO（普通的Java对象，plain old java objects）创建�
 
 **哪些方面的控制被反转了呢**
  - 获得依赖对象的过程被反转了
- 
+
 所谓依赖注入，就是由IOC容器在运行期间，动态地将某种依赖关系注入到对象之中。
 
 所以，依赖注入(DI)和控制反转(IOC)是从不同的角度的描述的同一件事情，就是指通过引入IOC容器，利用依赖关系注入的方式，实现对象之间的解耦。
@@ -39,7 +39,41 @@ Spring可以使用POJO（普通的Java对象，plain old java objects）创建�
  - 对象A依赖于对象B,当对象 A需要用到对象B的时候，IOC容器就会立即创建一个对象B送给对象A。
  - IOC容器就是一个对象制造工厂，你需要什么，它会给你送去，你直接使用就行了，而再也不用去关心你所用的东西是如何制成的，也不用关心最后是怎么被销毁的，这一切全部由IOC容器包办。
 
+## IOC容器设计
+> 是基于BeanFactory和ApplicationContext两个接口。  
+  ApplicationContext是BeanFactory的子接口之一。
+  BeanFactory是IOC容器定义的最底层接口，ApplicationContext是其中高级接口之一，并且做了许多的拓展。
+
+```java
+ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+BeanFactory factory =  context;
+```
+#### BeanFactory和ApplicationContext有什么区别
+BeanFactory可以理解为含有Bean集合的工厂类。  
+BeanFactory 包含了Bean的定义，以便在接收到客户端请求时将对应的Bean实例化。  
+BeanFactory还能在实例化对象时生成协作类之间的关系。此举将Bean自身从Bean客户端的配置中解放出来。BeanFactory还包含Bean生命周期的控制，调用客户端的初始化方法（Initialization Method）和销毁方法（Destruction Method）。 
+
+从表面上看，ApplicationContext如同BeanFactory一样具有Bean定义、Bean关联关系的设置及根据请求分发Bean的功能。
+
+但ApplicationContext在此基础上还提供了其他功能。 
+
+（1）提供了支持国际化的文本消息。  
+（2）统一的资源文件读取方式。  
+（3）已在监听器中注册的Bean的事件。  
+以下是三种较常见的 ApplicationContext 实现方式。 
+（1）ClassPathXmlApplicationContext：从ClassPath的XML配置文件中读取上下文，并生成上下文定义。应用程序上下文从程序环境变量中取得。  
+
+```
+ApplicationContext context = new ClassPathXmlApplicationContext(“application.xml”); 
+```
+（2）FileSystemXmlApplicationContext ：由文件系统中的XML配置文件读取上下文。
+```
+ApplicationContext context = new FileSystemXmlApplicationContext(“application.xml”); 
+```
+（3）XmlWebApplicationContext：由Web应用的XML文件读取上下文。
+
 ### 2.1.1 相关Java基础知识
+
 IOC流程
 ![ioc](ioc.png)
 
@@ -61,7 +95,7 @@ ClassLoader：类装载器，把一个类装入到JVM。
            <property name="prefix" value="/WEB-INF/views/" />
            <property name="suffix" value=".jsp" />
 </bean>
-```
+ ```
 2. **Spring 支持两种依赖注入方式：属性注入和构造函数注入，还支持工厂方法注入方式。**
 ```java
 public class SpringBeanFactory {
@@ -85,7 +119,7 @@ public class SpringBeanFactory {
         return beanFactory;
     }
 }
-```   
+```
 3. **自动装配 - autowire="自动装配类型"**
    - byName：根据名称自动匹配
    - byType：根据类型自动匹配

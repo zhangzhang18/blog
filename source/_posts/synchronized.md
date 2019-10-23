@@ -46,7 +46,7 @@ public class SyncThread implements Runnable {
     @Override
     public void run() {
         try {
-            String lock=new String();
+            String lock = new String();
             synchronized (this) {//1 synchronized (lock) 2//synchronized (SyncThread.class)3
                 System.out.println(Thread.currentThread().getName()+":a begin");
                 Thread.sleep(500);
@@ -234,11 +234,30 @@ main
 
 
 ---
+## synchronized修饰方法内对类变量i++，是线程安全吗？怎样保证安全?
+
+  由于`i++;`操作并不具备原子性，该操作是先读取值，然后写回一个新值，相当于原来的值加上1，分两步完成 。
+对于相同的实例是可以保证线程安全的。否则则不能保证。
+使用Volatile，保证变量i的可见性，就可以保证线程安全。
+
+```java
+//
+    private static Integer i = 1;
+    Thread t1=new Thread(instance);
+    Thread t2=new Thread(instance);
+    
+    private static volatile Integer i = 1;
+    Thread t1=new Thread(instance1);
+    Thread t2=new Thread(instance2);
+    synchronized (this) {sout(i++)}
+```
 
 synchronized的实现原理 
 
-1,synchronized代码块 monitorenter //进入同步方法 monitorexit //退出同步方法 2,synchronized方法 ACC_SYNCHRONIZED指明该方法为同步方法
-
+Java 虚拟机中的同步(Synchronization)基于进入和退出管程(Monitor)对象实现，  
+无论是显式同步(有明确的 monitorenter 和 monitorexit 指令,即同步代码块)还是隐式同步都是如此。  
+在 Java 语言中，同步用的最多的地方可能是被 synchronized 修饰的同步方法。同步方法 并不是由 monitorenter 和 monitorexit 指令来实现同步的，而是由方法调用指令读取运行时常量池中方法的 ACC_SYNCHRONIZED 标志来隐式实现的。
+[](https://www.cnblogs.com/wfq9330/p/9516375.html)
 [参考](https://www.cnblogs.com/lixuwu/p/5676143.html)
 
 

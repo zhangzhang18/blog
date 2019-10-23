@@ -10,11 +10,11 @@ tags:
   - 算法
 top:
 ---
-16. 给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。  
+16. 给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。  
 `例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.   
  与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).
 `
-![最接近的三数之和](https://leetcode-cn.com/problems/3sum-closest)
+[最接近的三数之和](https://leetcode-cn.com/problems/3sum-closest)
 
 ```java
     public static int threeSumClosest(int[] nums, int target) {
@@ -40,8 +40,10 @@ top:
         return closeNum;
     }
 ```
+<!-- more -->
+
 515. 在每个树行中找最大值
-![树行中找最大值](https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row)  
+     [树行中找最大值](https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row)  
 ```
 输入: 
           1  
