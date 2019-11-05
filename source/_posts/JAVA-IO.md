@@ -88,6 +88,10 @@ Channel主要分两大类：
 
  Java I/O多路复用简单的说，就是用单线程，记录并跟踪每个I/O流(sock)的状态，达到一个线程同时管理多个I/O流的效果 ，这就是Java I/O multiplexing。 
 
+点多份菜饭，我每次问一下所有菜的状态【IO复用】，问的时候会发生阻塞。
+
+
+
 [图解](https://cs.xieyonghui.com/java/33.html)
 
 [深入理解NIO](https://www.cnblogs.com/geason/p/5774096.html)

@@ -12,10 +12,11 @@ top:
 ---
 Dubbo 工作原理：服务注册、注册中心、消费者、代理通信、负载均衡；
 
+[RPC原理](https://www.cnblogs.com/LBSer/p/4853234.html)
+
 [Dubbo](http://dubbo.apache.org/zh-cn/docs/user/quick-start.html)
 
 [Dubbo集群容错](https://www.cnblogs.com/hd3013779515/p/6896942.html)
-
 
 一般的mvc项目 包含 Controller、Servicei、ServiceImpl、dao三层
 使用doubbo我们可以把项目拆分：
@@ -58,16 +59,24 @@ Dubbo缺省协议采用单一长连接和NIO异步通讯，适合于小数据量
 	* 服务消费者和提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心。
 ### **Dubbo 负载均衡策略**
   1.random load balance：**随机**调用实现负载均衡，可以对 provider不同实例**设置不同的权重**，会按照权重来负载均衡，权重越大分配流量越高。
+
   2.roundrobin loadbalance:**均匀**的打到各个机器，可以将性能差的机器权重小一点。
-  3.leastactive loadbalance：**自动感知**，如果某个机器性能越差，那么接收的请求越少，越不活跃，此时就会给**不活跃的性能差的机器更少的请求**。
-  4.consistanthash loadbalance：一致性 Hash 算法，**相同参数的请求**一定分发到一个 provider 上去，provider 挂掉的时候，会基于虚拟节点均匀分配剩余的流量，抖动不会太大。如果需要的不是随机负载均衡，是要一类请求都到一个节点，那就走这个一致性 Hash 策略。
+
+3.leastactive loadbalance：**自动感知**，如果某个机器性能越差，那么接收的请求越少，越不活跃，此时就会给**不活跃的性能差的机器更少的请求**。
+
+ 4.consistanthash loadbalance：一致性 Hash 算法，**相同参数的请求**一定分发到一个 provider 上去，provider 挂掉的时候，会基于虚拟节点均匀分配剩余的流量，抖动不会太大。如果需要的不是随机负载均衡，是要一类请求都到一个节点，那就走这个一致性 Hash 策略。
+
 ### **Dubbo 集群容错策略**
   1.failover cluster ：**失败自动切换**，自动重试其他机器，默认就是这个，常见于**读操作**。（失败重试其它机器）``<dubbo:service retries="2" />``
-  2.failfast cluster ：一次调用失败就立即失败，常见于**幂等性写操作**。（调用失败就立即失败）
+
+2.failfast cluster ：一次调用失败就立即失败，常见于**幂等性写操作**。（调用失败就立即失败）
   3.failsafe cluster ：出现异常时忽略掉，常用于不重要的接口调用，比如**记录日志**。
+
   4.failback cluster ：失败了后台自动记录请求，然后定时重发，比较适合于**写消息队列**这种。
+
   5.forking  cluster ：并行调用多个 provider，只要一个成功就立即返回。常用于**实时性要求比较高的读操作**，但是会浪费资源。
   6.broadcast cluster：逐个调用所有的 provider。通常用于**通知**所有提供者更新缓存或日志等本地资源信息。
+
 ### 序列化与反序列化
         序列化：把对象转换为字节序列的过程称为对象的序列化。 
         反序列化：把字节序列恢复为对象的过程称为对象的反序列化。  

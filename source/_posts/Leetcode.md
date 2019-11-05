@@ -93,3 +93,31 @@ top:
         return result;
     }
 ```
+
+#### [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+
+```
+   public int maxProfit(int[] prices) {
+        if (prices == null) {
+            return 0;
+        }
+        int count = 0;
+        int start;
+        int end;
+        int i = 0;
+        while (i < prices.length - 1) {
+            while (i < prices.length - 1 && prices[i] >= prices[i + 1]) {
+                i++;
+            }
+            start = prices[i];
+            while (i < prices.length - 1 && prices[i] <= prices[i + 1]) {
+                i++;
+            }
+            end = prices[i];
+            count += end - start;
+
+        }
+        return count;
+    }
+```
+
