@@ -2,7 +2,7 @@
 title: Spring-事物
 copyright: true
 abbrlink: b5de27d3
-date: 2018-03-16 12:50:21
+date: 2018-02-16 12:50:21
 categories:
   - NoteBook
 tags:
@@ -35,7 +35,7 @@ MySQL数据库提供的四种隔离级别：
 [spring事物配置](https://blog.csdn.net/bao19901210/article/details/41724355)
 事务隔离级别
 
-隔离级别是指若干个并发的事务之间的隔离程度。TransactionDefinition 接口中定义了五个表示隔离级别的常量：
+**隔离级别是指若干个并发的事务之间的隔离程度**。TransactionDefinition 接口中定义了五个表示隔离级别的常量：
 
 > - TransactionDefinition.ISOLATION_DEFAULT：这是默认值，表示使用底层数据库的默认隔离级别。对大部分数据库而言，通常这值就是TransactionDefinition.ISOLATION_READ_COMMITTED。
 > - TransactionDefinition.ISOLATION_READ_UNCOMMITTED：该隔离级别表示一个事务可以读取另一个事务修改但还没有提交的数据。该级别不能防止脏读，不可重复读和幻读，因此很少使用该隔离级别。比如PostgreSQL实际上并没有此级别。
@@ -45,7 +45,7 @@ MySQL数据库提供的四种隔离级别：
 --------------------- 
 事务传播行为
 
-      所谓事务的传播行为是指，如果在开始当前事务之前，一个事务上下文已经存在，此时有若干选项可以指定一个事务性方法的执行行为。在TransactionDefinition定义中包括了如下几个表示传播行为的常量：
+所谓事务的传播行为是指，**如果在开始当前事务之前，一个事务上下文已经存在，此时有若干选项可以指定一个事务性方法的执行行为。** 在TransactionDefinition定义中包括了如下几个表示传播行为的常量：
 
 > - TransactionDefinition.PROPAGATION_REQUIRED：如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。这是默认值。
 > - TransactionDefinition.PROPAGATION_REQUIRES_NEW：创建一个新的事务，如果当前存在事务，则把当前事务挂起。
